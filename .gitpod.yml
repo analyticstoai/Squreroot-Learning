@@ -1,0 +1,9 @@
+tasks:
+  - init: npm install
+    command: npm install -g gulp
+
+vscode:
+  extensions:
+    - esbenp.prettier-vscode@6.3.1:iOVHVb01wildbNZ98o51fQ==
+    - ducfilan.pug-formatter@0.6.0:KKCtMiccsTmRGPFwQOwH7Q==
+    - syler.sass-indented@1.8.16:ou+k4PWCjdf69KOqTPCafQ==
