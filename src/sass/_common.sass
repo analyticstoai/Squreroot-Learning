@@ -55,6 +55,12 @@ html
   &.no-scroll
     overflow: hidden
 
+.row
+  display: flex
+
+.column
+  flex: 50%
+
 body
   min-width: 375px
   font-family: 'SF Pro Display', sans-serif
@@ -2544,20 +2550,33 @@ select
         margin-bottom: 22px
   &__inner
     position: relative
-    padding: 80px 40px 
-    border-radius: 48px
-    border: 1px solid #D8D8D8
     text-align: center 
+    &:before
+      content: ""
+      position: absolute
+      top: 8px
+      left: 0
+      right: 0
+      bottom: -8px
+      z-index: -1
+      background: $wh
+      filter: blur(30.478px)
+      border-radius: 48px 
+      +d
+        border-radius: 32px 
+    &:hover
+      background: $wh
+  &__linumber
+    padding-right: 5px
+    float: right
+    cursor: pointer
+  &__listyle
+    padding: 10px 10px 
+    font-size: 12px
+    margin: 5px
+    border-radius: 12px
+    border: 1px solid #D8D8D8
     transition: all .25s
-    +mac
-      padding: 70px 20px
-    +d
-      padding: 56px 20px 
-      border-radius: 32px
-    +t
-      padding: 32px 10px 
-    +m
-      padding: 56px 24px  
     &:before
       content: ""
       position: absolute

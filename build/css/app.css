@@ -1658,6 +1658,18 @@ html.no-scroll {
   overflow: hidden;
 }
 
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.column {
+  -webkit-box-flex: 50%;
+  -ms-flex: 50%;
+  flex: 50%;
+}
+
 body {
   min-width: 375px;
   font-family: 'SF Pro Display', sans-serif;
@@ -4342,16 +4354,45 @@ select {
 
 .overview__inner {
   position: relative;
-  padding: 80px 40px;
-  border-radius: 48px;
-  border: 1px solid #D8D8D8;
   text-align: center;
+}
+
+.overview__inner:before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  z-index: -1;
+  background: #ffffff;
+  -webkit-filter: blur(30.478px);
+  filter: blur(30.478px);
+  border-radius: 48px;
+}
+
+.overview__inner:hover {
+  background: #ffffff;
+}
+
+.overview__linumber {
+  padding-right: 5px;
+  float: right;
+  cursor: pointer;
+}
+
+.overview__listyle {
+  padding: 10px 10px;
+  font-size: 12px;
+  margin: 5px;
+  border-radius: 12px;
+  border: 1px solid #D8D8D8;
   -webkit-transition: all .25s;
   -o-transition: all .25s;
   transition: all .25s;
 }
 
-.overview__inner:before {
+.overview__listyle:before {
   content: "";
   position: absolute;
   top: 8px;
@@ -4369,12 +4410,12 @@ select {
   transition: opacity .25s;
 }
 
-.overview__inner:hover {
+.overview__listyle:hover {
   background: #ffffff;
   border-color: #ffffff;
 }
 
-.overview__inner:hover:before {
+.overview__listyle:hover:before {
   opacity: 1;
 }
 
@@ -5120,9 +5161,6 @@ select {
   .overview__wrap {
     padding-left: 80px;
   }
-  .overview__inner {
-    padding: 70px 20px;
-  }
   .advantages__wrap {
     padding: 0 80px;
   }
@@ -5641,11 +5679,10 @@ select {
     width: calc(50%);
     margin: 50px 20px;
   }
-  .overview__inner {
-    padding: 56px 20px;
+  .overview__inner:before {
     border-radius: 32px;
   }
-  .overview__inner:before {
+  .overview__listyle:before {
     -webkit-filter: blur(30.784px);
     filter: blur(30.784px);
     border-radius: 32px;
@@ -5977,9 +6014,6 @@ select {
   }
   .overview__wrap {
     padding-left: 50px;
-  }
-  .overview__inner {
-    padding: 32px 10px;
   }
   .overview__category {
     font-size: 16px;
@@ -6654,9 +6688,6 @@ select {
   }
   .overview__item:not(:last-child) {
     margin-bottom: 22px;
-  }
-  .overview__inner {
-    padding: 56px 24px;
   }
   .overview__category {
     font-size: 18px;
